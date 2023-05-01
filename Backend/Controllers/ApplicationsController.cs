@@ -36,13 +36,14 @@ namespace Backend.Controllers
 
 
         [HttpPost]
-        public IActionResult PostApplication ([FromBody] Application application) 
+        public async Task<IActionResult> CreateApplication([FromBody] Application application)
         {
-            _context.Applications!.Add(application);
-            _context.SaveChanges();
+            _context.Applications.Add(application);
+            await _context.SaveChangesAsync();
+        
+            return Ok(application);
+        }        
 
-            return Ok();
-        }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateApplication(int id, [FromBody] Application application)
