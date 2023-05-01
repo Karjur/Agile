@@ -14,25 +14,26 @@ namespace Backend.Controllers
             _context = context;
         }
         [HttpGet]
-public ActionResult<IEnumerable<Application>> GetApplications()
-{
-    TimeZoneInfo gmtPlus3 = TimeZoneInfo.FindSystemTimeZoneById("Europe/Moscow"); // set the time zone to GMT+3
-    var applications = _context.Applications.AsEnumerable()
-        .Where(a => !a.hasBeenCompleted)
-        .OrderByDescending(a => a.solveDate)
-        .Select(a => new Application
+        public async Task<ActionResult<IEnumerable<Application>>> GetApplications()
         {
-            id = a.id,
-            description = a.description,
-            entryDate = TimeZoneInfo.ConvertTimeFromUtc(a.entryDate, gmtPlus3), // convert entryDate to GMT+3
-            solveDate = TimeZoneInfo.ConvertTimeFromUtc(a.solveDate, gmtPlus3), // convert solveDate to GMT+3
-            hasBeenCompleted = a.hasBeenCompleted,
-            isDueSoon = (TimeZoneInfo.ConvertTimeFromUtc(a.solveDate, gmtPlus3) - TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, gmtPlus3)).TotalHours <= 1 // Set isDueSoon to true if the solveDate is within the next hour in GMT+3
-        })
-        .ToList();
-    
-    return Ok(applications);
-}
+            TimeZoneInfo gmtPlus3 = TimeZoneInfo.FindSystemTimeZoneById("Europe/Moscow"); // set the time zone to GMT+3
+            var applications = _context.Applications.AsEnumerable()
+                .Where(a => !a.hasBeenCompleted)
+                .OrderByDescending(a => a.solveDate)
+                .Select(a => new Application
+                {
+                    id = a.id,
+                    description = a.description,
+                    entryDate = TimeZoneInfo.ConvertTimeFromUtc(a.entryDate, gmtPlus3), // convert entryDate to GMT+3
+                    solveDate = TimeZoneInfo.ConvertTimeFromUtc(a.solveDate, gmtPlus3), // convert solveDate to GMT+3
+                    hasBeenCompleted = a.hasBeenCompleted,
+                    isDueSoon = (TimeZoneInfo.ConvertTimeFromUtc(a.solveDate, gmtPlus3) - TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, gmtPlus3)).TotalHours <= 1 // Set isDueSoon to true if the solveDate is within the next hour in GMT+3
+                })
+                .ToList();
+        
+            return await Task.FromResult<ActionResult<IEnumerable<Application>>>(Ok(applications));
+        }
+
 
         [HttpPost]
         public IActionResult PostApplication ([FromBody] Application application) 
