@@ -6,8 +6,6 @@ To run code
 
 Open project in VSCode
 
-Nuget => Microsoft.EntityFrameWorkCore and Microsoft.EntityFrameWorkCore.InMemory for backend 
-
 Generate assets for debugging(.NET)
 
 Run(debug) Backend folder
