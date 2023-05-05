@@ -73,7 +73,6 @@ export default {
   const solveDateTime = new Date(solveDate.value).toISOString();
   axios.post('http://localhost:5166/api/Applications', {
     description: description.value,
-    entryDate: entryDate.value,
     solveDate: solveDateTime
   })
     .then(() => { // Gets all the applications which have not been completed

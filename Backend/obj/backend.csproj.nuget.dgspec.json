@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\karmo\\OneDrive\\Desktop\\Agile\\Backend\\Backend.csproj": {}
+    "C:\\Users\\karmo\\OneDrive\\Desktop\\Agile\\Backend\\backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\karmo\\OneDrive\\Desktop\\Agile\\Backend\\Backend.csproj": {
+    "C:\\Users\\karmo\\OneDrive\\Desktop\\Agile\\Backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\karmo\\OneDrive\\Desktop\\Agile\\Backend\\Backend.csproj",
-        "projectName": "Backend",
-        "projectPath": "C:\\Users\\karmo\\OneDrive\\Desktop\\Agile\\Backend\\Backend.csproj",
+        "projectUniqueName": "C:\\Users\\karmo\\OneDrive\\Desktop\\Agile\\Backend\\backend.csproj",
+        "projectName": "backend",
+        "projectPath": "C:\\Users\\karmo\\OneDrive\\Desktop\\Agile\\Backend\\backend.csproj",
         "packagesPath": "C:\\Users\\karmo\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\karmo\\OneDrive\\Desktop\\Agile\\Backend\\obj\\",
         "projectStyle": "PackageReference",

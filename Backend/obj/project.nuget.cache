@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N1CtDPUEpYFSujUx5gwe2ZKUCIOVcrY5BBd91wi93XQCVX6ZJZVoTdQsAyimFioCm1mFx1/h+3ueJh56jSbonw==",
+  "dgSpecHash": "DGyYNbK96AujGNdC4HIg6xFuyAvD5M6hZw4BUekJXTAdiiMO8vR4ygOvY46/7W/AY2lvS9Wvv4iytN79QFTN+w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\karmo\\OneDrive\\Desktop\\Agile\\Backend\\Backend.csproj",
+  "projectFilePath": "C:\\Users\\karmo\\OneDrive\\Desktop\\Agile\\Backend\\backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\karmo\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
     "C:\\Users\\karmo\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.5\\microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
